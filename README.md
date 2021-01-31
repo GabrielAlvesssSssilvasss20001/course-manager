@@ -1,3 +1,7 @@
+# StartingTheService
+
+First of all, git bash inside course-manager-service dir and start the service by running `node server.js`.
+
 # CourseManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
