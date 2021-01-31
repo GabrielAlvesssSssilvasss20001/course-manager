@@ -37,6 +37,7 @@
             <td> {{course.price}} </td>
             <td>
                 <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Editar</a>
+                <button (click)='deleteById(course.id)' class="btn btn-secondary">Excluir</button>
             </td>
         </tr>
     </tbody>

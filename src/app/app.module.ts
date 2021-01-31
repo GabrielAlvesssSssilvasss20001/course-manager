@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './courses/course-list.component';
 import { StarComponent } from './star/star.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PageNotFound404Component } from './pageNotFound404/pageNotFound404.component';
 import { CourseInfoComponent } from './courses/course-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ReplacePipe } from './pipe/replace.pipe';
 
@@ -26,6 +26,7 @@ import { ReplacePipe } from './pipe/replace.pipe';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: 'courses', component: CourseListComponent
