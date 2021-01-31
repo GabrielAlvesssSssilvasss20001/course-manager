@@ -14,12 +14,18 @@ export class CourseInfoComponent implements OnInit {
     constructor(private activatedRoute: ActivatedRoute, private courseService: CourseService) {}
     
     ngOnInit(): void {
-        this.courseById = this.courseService.retrieveById(+this.activatedRoute.snapshot.paramMap.get('id'));
+        this.courseService.retrieveById(+this.activatedRoute.snapshot.paramMap.get('id')).subscribe({
+            next: course => this.courseById = course,
+            error: err => console.log('Unhadled Service Error', err)
+        });
     }
 
     save(): void {
-        this.courseService.save(this.courseById)
+        this.courseService.save(this.courseById).subscribe({
+            next: course => console.log('Curso Salvo com Sucesso', course),
+            error: err => console.log('Unhandled Service Error', err) 
+        });
     }
-
+    
     back(): void {}
 }
